@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+</style>
+<script src=""></script>
+<body>
+
+    <label for="input">Vul maar iets in:</label>
+    <input id="input" name="input" type="text">
+    
+    <button onclick="handleClick()">Submit!</button>
+
+</body>
+</html>
+
+<script>
+    function handleClick() {
+        let input = document.getElementById("input");
+        if (input.value === "hallo") {
+            alert("welkom");
+        }
+        
+        if (input.value === "doei") {
+            alert("Tot de volgende keer!");
+        }
+
+        input.value = "";
+    }
+</script>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div style="float: left;">
+            <span style="display: block;">Slideshow A</span>
+            <img id="imageA" src="https://cdn.mos.cms.futurecdn.net/tXr5UjKDsDBrYBQM9znb2c-1200-80.jpg.webp" width="200" height="200" alt="">
+        </div>
+        
+        <div style="float: left; margin-left: 200px;">
+            <span style="display: block;">Slideshow B</span>
+            <img id="imageB" src="https://cdn.britannica.com/88/137188-050-8C779D64/Boston-Public-Garden.jpg" width="200" height="200" alt="">
+        </div>
+
+        <div style="float: left; padding: 20px 0">
+            <button onclick="handleAClick()">Ga een seizoen verder voor slideshow A</button>
+            <button onclick="compareClick()">Vergelijk de slideshows</button>
+            <button onclick="handleBClick()">Ga een seizoen verder voor slideshow B</button>
+        </div>
+    </div>
+
+    
+</body>
+</html>
+<script>
+    let seizoenA = 0;
+    let seizoenB = 0;
+    
+    function handleAClick(params) {
+        const image = document.getElementById("imageA");
+        seizoenA++;
+        if(seizoenA >= 4) {
+            seizoenA = 0;
+        }
+
+        switch (seizoenA) {
+            case 0:
+                image.src="https://cdn.mos.cms.futurecdn.net/tXr5UjKDsDBrYBQM9znb2c-1200-80.jpg.webp";
+                break;
+            case 1:
+                image.src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg";
+                break;
+            case 2:
+                image.src="https://cdn.britannica.com/88/137188-050-8C779D64/Boston-Public-Garden.jpg";
+                break;
+            case 3:
+                image.src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Winter_forest_silver.jpg/1280px-Winter_forest_silver.jpg";
+                break;
+            default:
+                break;
+        }
+    }
+
+    function handleBClick(params) {
+        const image = document.getElementById("imageB");
+        seizoenB++;
+        if(seizoenB >= 4) {
+            seizoenB = 0;
+        }
+
+        switch (seizoenB) {
+            case 0:
+                image.src="https://cdn.mos.cms.futurecdn.net/tXr5UjKDsDBrYBQM9znb2c-1200-80.jpg.webp";
+                break;
+            case 1:
+                image.src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg";
+                break;
+            case 2:
+                image.src="https://cdn.britannica.com/88/137188-050-8C779D64/Boston-Public-Garden.jpg";
+                break;
+            case 3:
+                image.src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Winter_forest_silver.jpg/1280px-Winter_forest_silver.jpg";
+                break;
+            default:
+                break;
+        }
+    }
+
+    function compareClick() {
+        const imageA = document.getElementById("imageA");
+        const imageB = document.getElementById("imageB");
+        
+        if (imageA.src == imageB.src) {
+            console.log("Hetzelfde");
+        } else {
+            console.log("Niet hetzelfde");
+        }
+    }
+</script>

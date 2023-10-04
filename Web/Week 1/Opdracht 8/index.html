@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div style="float: left;">
+            <span style="display: block;">Slideshow A</span>
+            <img id="imageA" onclick="handleClick()" src="https://cdn.mos.cms.futurecdn.net/tXr5UjKDsDBrYBQM9znb2c-1200-80.jpg.webp" width="200" height="200" alt="">
+        </div>
+        
+        <div style="float: left; margin-left: 100px;">
+            <span style="display: block;">Slideshow B</span>
+            <img id="imageB" src="https://m.media-amazon.com/images/I/518YabTa8YL.__AC_SX300_SY300_QL70_ML2_.jpg" width="200" height="200" alt="">
+        </div>
+    </div>
+
+    
+</body>
+</html>
+<script>
+    let seizoen = 0;    
+    const imageA = document.getElementById("imageA");
+    const imageB = document.getElementById("imageB");
+
+    if (seizoen == 0) {
+        imageB.src="https://www.beestig.be/sites/default/files/styles/article_header/public/artikel/teaser_achtergrond/lammetjes_header.jpg?itok=3Hrl1Fxx"
+    }
+
+    function handleClick(params) {
+        seizoen++;
+        if(seizoen >= 4) {
+            seizoen = 0;
+        }
+
+        switch (seizoen) {
+            case 0:
+                imageA.src="https://cdn.mos.cms.futurecdn.net/tXr5UjKDsDBrYBQM9znb2c-1200-80.jpg.webp";
+                imageB.src="https://www.beestig.be/sites/default/files/styles/article_header/public/artikel/teaser_achtergrond/lammetjes_header.jpg?itok=3Hrl1Fxx"
+                imageB.hidden = false;
+                break;
+            case 1:
+                imageA.src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg";
+                imageB.src="https://m.media-amazon.com/images/I/518YabTa8YL.__AC_SX300_SY300_QL70_ML2_.jpg";
+                break;
+            case 2:
+                imageA.src="https://cdn.britannica.com/88/137188-050-8C779D64/Boston-Public-Garden.jpg";
+                imageB.src="https://m.media-amazon.com/images/I/518YabTa8YL.__AC_SX300_SY300_QL70_ML2_.jpg";
+                break;
+            case 3:
+                imageA.src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Winter_forest_silver.jpg/1280px-Winter_forest_silver.jpg";
+                imageB.src="https://m.media-amazon.com/images/I/518YabTa8YL.__AC_SX300_SY300_QL70_ML2_.jpg";
+                break;
+            default:
+                break;
+        }
+    }
+</script>

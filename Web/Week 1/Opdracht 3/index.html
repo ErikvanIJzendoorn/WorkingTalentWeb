@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="text">Vul maar iets in:</label>
+    <input id="text" name="text" type="text">
+
+    <label for="char">Welke letter wil je tellen?</label>
+    <input id="char" name="char" type="text">
+
+    <button onclick="handleClick()">Click me!</button>
+</body>
+</html>
+
+<script>
+    function handleClick() {
+        let text = document.getElementById("text").value;
+        let search_char = document.getElementById("char").value;
+
+        const count = [...text].filter(x => x === search_char).length;
+        alert(`De letter ${search_char.value} is ${count} keer gebruikt`);
+    }
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="image" src="https://cdn.mos.cms.futurecdn.net/tXr5UjKDsDBrYBQM9znb2c-1200-80.jpg.webp" width="200" height="200" alt="">
+
+    <button onclick="handleClick()">Ga een seizoen verder</button>
+</body>
+</html>
+<script>
+    let seizoen = 0;
+    let year = 0;
+    
+    function handleClick(params) {
+        const image = document.getElementById("image");
+        seizoen++;
+        if(seizoen >= 4) {
+            seizoen = 0;
+            year++;
+
+            alert(`Er is ${year % 4} jaar voorbij`);
+        }
+
+        switch (seizoen) {
+            case 0:
+                image.src="https://cdn.mos.cms.futurecdn.net/tXr5UjKDsDBrYBQM9znb2c-1200-80.jpg.webp";
+                break;
+            case 1:
+                image.src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg";
+                break;
+            case 2:
+                image.src="https://cdn.britannica.com/88/137188-050-8C779D64/Boston-Public-Garden.jpg";
+                break;
+            case 3:
+                image.src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Winter_forest_silver.jpg/1280px-Winter_forest_silver.jpg";
+                break;
+            default:
+                break;
+        }
+    }
+</script>
